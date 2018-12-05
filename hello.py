@@ -14,26 +14,25 @@ def hello():
 @app.route('/lumiere/allume/<valeurlum>')
 def lumiereAllume(valeurlum):
     pin=0
+    print(valeurlum)
     if valeurlum==1:
-	pin=5
-    else if valeurlum==2:
+        pin=5
+    elif valeurlum==2:
         pin=6
-    else if valeurlum==3:
-  	pin=13
-    if pin==0:
-    else:
-    	GPIO.setmode(GPIO.BCM)
-    	GPIO.setup(pin, GPIO.OUT)
+    elif valeurlum==3:
+        pin=13
+    if pin!=0:
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(pin, GPIO.OUT)
 
-    	GPIO.output(pin, GPIO.HIGH)
-    	time.sleep(5)
-    	
-    	GPIO.output(pin, GPIO.LOW)
+        GPIO.output(pin, GPIO.HIGH)
+        time.sleep(5)
 
-    	GPIO.cleanup()
+        GPIO.output(pin, GPIO.LOW)
 
-
-    return 'True %s' % valeurlum
+        GPIO.cleanup()
+    print(valeurlum, pin)
+    return 'True %s' % pin
 
 
 @app.route('/lumiere/eteint/<valeurlum>')
