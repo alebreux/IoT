@@ -42,10 +42,10 @@ def lumiereEteint(valeurlum):
 
 @app.route('/volet/ouvre/<valeurVolet>')
 def voletOuvre(valeurVolet):
-    GPIO.setmode(GPIO.BOARD)
-    Motor1A = 16
-    Motor1B = 18
-    Motor1E = 22
+    GPIO.setmode(GPIO.BCM)
+    Motor1A = 23
+    Motor1B = 24
+    Motor1E = 25
 
     GPIO.setup(Motor1A,GPIO.OUT)
     GPIO.setup(Motor1B,GPIO.OUT)
@@ -66,10 +66,10 @@ def voletOuvre(valeurVolet):
 
 @app.route('/volet/ferme/<valeurVolet>')
 def voletFerme(valeurVolet):
-    GPIO.setmode(GPIO.BOARD)
-    Motor1A = 16
-    Motor1B = 18
-    Motor1E = 22
+    GPIO.setmode(GPIO.BCM)
+    Motor1A = 23
+    Motor1B = 24
+    Motor1E = 25
 
     GPIO.setup(Motor1A,GPIO.OUT)
     GPIO.setup(Motor1B,GPIO.OUT)
