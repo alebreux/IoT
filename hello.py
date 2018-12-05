@@ -11,7 +11,7 @@ def hello():
     return "Hello World !"
 
 
-@app.route('/lumiere/allume/<valeurlum>')
+@app.route('/lumiere/allume/<int:valeurlum>')
 def lumiereAllume(valeurlum):
     pin=0
     print(valeurlum)
@@ -35,12 +35,12 @@ def lumiereAllume(valeurlum):
     return 'True %s' % pin
 
 
-@app.route('/lumiere/eteint/<valeurlum>')
+@app.route('/lumiere/eteint/<int:valeurlum>')
 def lumiereEteint(valeurlum):
     return 'False %s' % valeurlum
 
 
-@app.route('/volet/ouvre/<valeurVolet>')
+@app.route('/volet/ouvre/<int:valeurVolet>')
 def voletOuvre(valeurVolet):
     GPIO.setmode(GPIO.BCM)
     Motor1A = 23
@@ -64,7 +64,7 @@ def voletOuvre(valeurVolet):
     return 'True %s' % valeurVolet
 
 
-@app.route('/volet/ferme/<valeurVolet>')
+@app.route('/volet/ferme/<int:valeurVolet>')
 def voletFerme(valeurVolet):
     GPIO.setmode(GPIO.BCM)
     Motor1A = 23
