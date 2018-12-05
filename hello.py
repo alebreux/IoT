@@ -56,7 +56,7 @@ def voletOuvre(valeurVolet):
     GPIO.output(Motor1B,GPIO.LOW)
     GPIO.output(Motor1E,GPIO.HIGH)
 
-    sleep(20)
+    sleep(5)
     print("stopping motor")
     GPIO.output(Motor1E,GPIO.LOW)
 
@@ -80,7 +80,7 @@ def voletFerme(valeurVolet):
     GPIO.output(Motor1B,GPIO.HIGH)
     GPIO.output(Motor1E,GPIO.HIGH)
 
-    sleep(20)
+    sleep(5)
     print("stopping motor")
     GPIO.output(Motor1E,GPIO.LOW)
 
