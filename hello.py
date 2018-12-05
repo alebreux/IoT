@@ -2,6 +2,7 @@ from flask import Flask
 import subprocess
 import RPi.GPIO as GPIO
 from time import sleep
+import time
 
 app = Flask(__name__)
 
@@ -12,6 +13,26 @@ def hello():
 
 @app.route('/lumiere/allume/<valeurlum>')
 def lumiereAllume(valeurlum):
+    pin=0
+    if valeurlum==1:
+	pin=5
+    else if valeurlum==2:
+        pin=6
+    else if valeurlum==3:
+  	pin=13
+    if pin==0:
+    else:
+    	GPIO.setmode(GPIO.BCM)
+    	GPIO.setup(pin, GPIO.OUT)
+
+    	GPIO.output(pin, GPIO.HIGH)
+    	time.sleep(5)
+    	
+    	GPIO.output(pin, GPIO.LOW)
+
+    	GPIO.cleanup()
+
+
     return 'True %s' % valeurlum
 
 
